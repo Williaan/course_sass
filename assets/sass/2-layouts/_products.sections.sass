@@ -1,0 +1,27 @@
+@use '../1-base/base-queries'
+@use 'layouts-mixins'
+
+
+.products-grid
+    @include layouts-mixins.center-content()
+    flex-direction: column
+    padding: 2rem 0
+
+    h2
+        font-size: 2rem
+        text-transform: uppercase
+
+
+    //MOBILE
+    @include base-queries.mobile()
+        text-align: center
+
+    &-container
+        display: flex
+        justify-content: space-between
+        padding: 2rem 0
+
+         //MOBILE
+        @include base-queries.mobile()
+            flex-direction: column
+            align-items: center

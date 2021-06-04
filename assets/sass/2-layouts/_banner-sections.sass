@@ -1,0 +1,12 @@
+@use '../1-base/base-queries'
+@use 'layouts-mixins'
+
+.banners
+    @include layouts-mixins.center-content
+    padding: 3rem 0
+    
+
+     //MOBILE
+    @include base-queries.mobile()
+        flex-direction: column
+        align-items: center

@@ -1,0 +1,78 @@
+@use '../1-base/base-queries'
+@use 'layouts-mixins'
+@use '../1-base/variables'
+
+.footer
+    background-color: variables.$bg-color
+    padding: 3rem 0
+
+    //MOBILE
+    @include base-queries.mobile()
+        padding: 3rem
+
+
+    a, p
+        color: variables.$gray-text-color
+
+    li, p
+        margin-bottom: 1rem
+
+        a
+            &:hover
+                color: variables.$primary-color
+    
+    i
+        margin-right: .3rem
+
+    h3
+        color: variables.$light-color
+        text-transform: uppercase
+        font-size: 1.75rem
+        margin-bottom: 1.5rem
+
+    &-top
+        @include layouts-mixins.center-content()
+        padding-bottom: 3rem
+
+        //MOBILE
+        @include base-queries.mobile()
+            flex-direction: column
+
+
+        &-about
+            address
+                display: flex
+                flex-direction: column
+                
+                span
+                    color: variables.$gray-text-color
+                    margin: .5rem
+
+
+        &-about, &-categories, &-information, &-menu
+            max-width: 25%
+
+            //MOBILE
+            @include base-queries.mobile()
+                max-width: 100%
+                margin-bottom: 1rem
+                text-align: left
+    
+    &-bottom
+        @include layouts-mixins.center-content()
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        &-payments
+            margin-bottom: 2rem
+
+            i
+                color: variables.$dark-color
+                cursor: pointer
+                font-size: 3rem
+                margin: 5px
+                transition: .4s ease
+
+                &:hover
+                    color: variables.$primary-color
